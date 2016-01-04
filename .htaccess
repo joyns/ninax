@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} !^www\.ninax\.rs$
+RewriteRule ^(.*)$ http://www.ninax.rs/$1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.php?\ HTTP/
+RewriteRule ^(.*)index\.php?$ http://www.ninax.rs/$1 [R=301,L]
+</IfModule>
